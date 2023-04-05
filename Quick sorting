@@ -1,0 +1,38 @@
+public class Main {
+    public static void main(String args[]) {
+        int[] array = {20, 35, -15, 7, 55, 1, -22};
+        quicksort(array,0,array.length);
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+
+    public static void quicksort(int[] arra, int start, int end) {
+        if (end - start < 2) {
+            return ;
+        }
+        int pivotIndex = partition(arra, start, end);
+        quicksort(arra, start, pivotIndex);
+        quicksort(arra, pivotIndex+1, end);
+    }
+
+    public static   int partition(int[] arra, int start, int end) {
+        int pivot = arra[start];
+        int i = start;
+        int j = end;
+        while (i < j) {
+            while (i < j && arra[--j] >= pivot) ;
+            if (i < j) {
+                arra[i] = arra[j];
+            }
+
+            while (i < j && arra[++i] <= pivot) ;
+            if (i < j) {
+                arra[j] = arra[i];
+            }
+        }
+        arra[j] = pivot;
+        return j;
+    }
+}
