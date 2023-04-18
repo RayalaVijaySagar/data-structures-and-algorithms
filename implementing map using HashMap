@@ -1,0 +1,19 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+class comImp {
+    public static void main(String args[]) {
+        Map<String,String> map=new HashMap<>();
+        map.put("actor","leo");
+        map.put("movie","interstellar");
+        map.put("model","gigi hadid");
+
+        Set<String> keys=map.keySet();
+        for(Object value:keys) {
+            System.out.println(value + " - " + map.get(value));
+        }
+        System.out.println(map.get("model"));
+        System.out.println(keys );
+    }
+}
