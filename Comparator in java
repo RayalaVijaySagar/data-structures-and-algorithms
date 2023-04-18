@@ -1,0 +1,30 @@
+import java.util.Comparator;
+
+
+class code
+{
+        public static void main(String args[]){
+            List<Integer> val=new ArrayList<>();
+            val.add(36);
+            val.add(23);
+            val.add(444);
+            Comparator<Integer> com=new comImp();
+            Collections.sort(val,com);
+
+            for(int i:val){
+                System.out.println(i);
+            }
+
+}
+}
+
+
+public class comImp implements Comparator<Integer> {
+    public int compare(Integer o1, Integer o2) {
+        if (o1%10 > o2%10) {
+            return 1;//swap
+        } else {
+            return -1;//still
+        }
+    }
+}
