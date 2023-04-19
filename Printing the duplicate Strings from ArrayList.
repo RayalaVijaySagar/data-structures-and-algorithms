@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+class comImp {
+    public static void main(String args[]) {
+        ArrayList<String> names=new ArrayList<>();
+        names.add("Vijay");
+        names.add("Rahul");
+        names.add("Mohan");
+        names.add("Vijay");
+        Set<String> nam=new HashSet<>();
+
+        for(String na:names) {
+            if (nam.add(na) == false) {
+                System.out.println(na);
+            }
+        }
+    }
+}
