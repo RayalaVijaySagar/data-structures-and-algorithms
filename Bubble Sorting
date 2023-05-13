@@ -1,0 +1,27 @@
+public class Main{
+  public static void main(String args[]){
+    int array[]={3,6,-12,-9,4,78,-34};
+    for(int LUI=array.length-1;LUI>0;LUI--){//LUI-lastUnsortedIndex
+      for(int i=0;i<LUI;i++){
+        if(array[i]>array[i+1]){
+          swap(array,i,i+1);
+        }
+      }
+    }
+    for(int vals:array){
+      System.out.println(vals);
+    }
+
+  }
+  public static void swap(int array[],int i,int j){
+    int temp=array[i];
+    if(array[i]==array[j]){
+      return;
+    }
+    else if(array[i]>array[j]){
+      array[i]=array[j];
+      array[j]=temp;
+    }
+  }
+
+}
