@@ -1,0 +1,28 @@
+public class Main{
+  public static void main(String args[]){
+    int array[]={20,35,-15,7,55,1,-22};
+
+    for(int lUI=array.length-1;lUI>0;lUI--){
+      int largest=0;
+      for(int i=1;i<lUI;i++){
+        if(array[largest]<array[i]){
+          largest=i;
+        }
+      }
+      swap(array,largest,lUI);
+    }
+    for(int vals:array){
+      System.out.println(vals);
+    }
+
+  }
+  public static void swap(int array[],int i,int j){
+    if(i==j){
+      return;
+    }
+    int temp=array[j];
+    array[j]=array[i];
+    array[i]=temp;
+
+  }
+}
