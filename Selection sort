@@ -4,7 +4,7 @@ public class Main{
 
     for(int lUI=array.length-1;lUI>0;lUI--){
       int largest=0;
-      for(int i=1;i<lUI;i++){
+      for(int i=1;i<=lUI;i++){
         if(array[largest]<array[i]){
           largest=i;
         }
@@ -17,7 +17,7 @@ public class Main{
 
   }
   public static void swap(int array[],int i,int j){
-    if(i==j){
+    if(array[i]==array[j]){
       return;
     }
     int temp=array[j];
