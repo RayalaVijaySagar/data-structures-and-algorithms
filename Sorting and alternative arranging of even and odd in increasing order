@@ -1,0 +1,45 @@
+// This code here will help to sort the array and place even and odd values alternatively in the increaseing order respectively.
+class AlterSorthing {
+    public static void main(String args[]) {
+        int array[]={3,2,5,8,6,-12,5 };
+        for(int FUI=1;FUI<array.length;FUI++){
+            int  newElement=array[FUI];
+            int i;
+            for(i=FUI;i>0 && array[i-1]>newElement;i--){
+                array[i]=array[i-1];
+            }
+            array[i]=newElement;
+        }
+        ArrayList<Integer> even=new ArrayList<>();
+        ArrayList<Integer> odd=new ArrayList<>();
+        for(int i=0;i<array.length;i++){
+            if(array[i]%2==0 ){
+                even.add(array[i]);
+            }
+            else{
+                odd.add(array[i]);
+            }
+        }
+        int k=0;
+        int l=0;
+        for(int i=0;i<array.length;i++){
+            if(i%2==0) {
+                while (true) {
+                    array[i] = even.get(k);
+                    k++;
+                    break;
+                }
+            }
+            else{
+                while(true){
+                    array[i]= odd.get(l);
+                    l++;
+                    break;
+                }
+            }
+        }
+        for(int i:array){
+            System.out.print(i+" ");
+        }
+    }
+}
