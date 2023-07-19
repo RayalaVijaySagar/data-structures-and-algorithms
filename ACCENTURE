@@ -1,0 +1,35 @@
+public class Solution {
+    public static void main(String[] args) {
+        ArrayList<Integer> array = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            array.add(sc.nextInt());
+        }//274181
+        for(int Fui=1;Fui<array.size();Fui++){
+            int newElement=array.get(Fui);
+            int i;
+            for(i=Fui;i>0 && array.get(i-1)>newElement;i--){
+                array.set(i,array.get(i-1));
+            }
+            array.set(i,newElement);
+        }
+        System.out.println(array);
+        for(int i=array.size()-1;i>0;i--){      //[1, 1, 2, 4, 7, 8]
+            if(array.get(i)==array.get(i-1)){
+                array.remove(i);
+                array.remove(i-1);
+                i=i-1;
+            }
+            else if(array.get(i)>=array.get(i-1)){
+                array.set(i,array.get(i)-array.get(i-1));
+                array.remove(i-1);
+            }
+        }
+        if(array.get(0)!=0){
+            System.out.println(array.get(0));
+        }else {
+            System.out.println(0);
+        }
+    }
+}
