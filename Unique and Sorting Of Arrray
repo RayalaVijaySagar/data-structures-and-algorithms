@@ -1,0 +1,57 @@
+1.Sorting and printing unique
+public class Main {
+    public static void main(String args[]) {
+        int array[]={2,1,2,5,5,1,2,3,3,4};
+       uniqueSortedArray(array);
+    }
+    public static void uniqueSortedArray(int array[]){
+        for(int LUI=1;LUI<array.length;LUI++){
+            int i;
+            int newElement=array[LUI];
+            for(i=LUI;i>0 && array[i-1]>newElement;i--){
+                array[i]=array[i-1];
+            }
+            array[i]=newElement;
+        }
+        int k=0;//1,1,2,2,2,3,3,4,5,5
+        for(int i=1;i<array.length;i++){
+            if(array[i-1]!=array[i]){
+                k++;
+                array[k]=array[i];
+            }
+        }
+        for(int i=0;i<=k;i++){
+            System.out.print(array[i]);
+        }
+    }
+}
+
+
+2.Printing Only unique not sorted
+
+
+public class Prepare {
+    public static void main(String args[]) {
+        int arrayWD[]={10,3,5,3,4,4,3};
+        int len=arrayWD.length;
+        int arrayWU[]=new int[10];
+        int index=0;
+        for(int i=0;i<len;i++){
+            int flag=0;
+            for(int j=0;j<i;j++){
+                if(arrayWD[i]==arrayWU[j]){
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0){
+                arrayWU[index]=arrayWD[i];
+                index++;
+            }
+        }
+        for(int i=0;i<index;i++){
+            System.out.print(arrayWU[i]+"  ");
+        }
+    }
+}
+
